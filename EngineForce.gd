@@ -12,6 +12,10 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+var velocity;
+
 func _process(delta):
-	self.value = get_node("../Player").force;
-	pass
+	velocity = get_node("../Player").linear_velocity;
+	velocity.y = 0;
+	self.value = velocity.length_squared();
+	
