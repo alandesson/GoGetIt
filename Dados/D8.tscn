@@ -17,7 +17,7 @@ surfaces/0 = {
 [sub_resource type="ConvexPolygonShape" id=2]
 points = PoolVector3Array( 0, 1, 0, 1, 0, 0, 0, 0, -1, -1, 0, 0, 0, 0, 1, 0, -1, 0 )
 
-[node name="D8" type="RigidBody"]
+[node name="D8" type="RigidBody" groups=["Dice"]]
 collision_layer = 3
 collision_mask = 3
 
