@@ -20,7 +20,9 @@ surfaces/0 = {
 [sub_resource type="ConvexPolygonShape" id=2]
 points = PoolVector3Array( 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, -1, 1, 1, -1, -1, -1, 1, -1, -1, -1, 1, -1, -1, -1 )
 
-[node name="D6" type="RigidBody"]
+[node name="D6" type="RigidBody" groups=["Dice"]]
+collision_layer = 3
+collision_mask = 3
 
 [node name="Mesh" type="MeshInstance" parent="."]
 mesh = SubResource( 1 )

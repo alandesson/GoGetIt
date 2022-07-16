@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
-[ext_resource path="res://Camera.gd" type="Script" id=2]
 
 [sub_resource type="CubeMesh" id=4]
 size = Vector3( 1, 1.5, 1 )
@@ -84,15 +83,3 @@ transform = Transform( 1, 0, 0, 0, 0.921348, 0.388738, 0, -0.388738, 0.921348, 0
 mesh = SubResource( 9 )
 skeleton = NodePath("../../..")
 material/0 = null
-
-[node name="CameraNode" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.249258, 1.24825, 0.0838952 )
-script = ExtResource( 2 )
-
-[node name="Horizontal" type="Spatial" parent="CameraNode"]
-
-[node name="Vertical" type="Spatial" parent="CameraNode/Horizontal"]
-
-[node name="Camera" type="Camera" parent="CameraNode/Horizontal/Vertical"]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -4 )
-current = true
