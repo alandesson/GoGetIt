@@ -18,6 +18,7 @@ _data = {
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 1 )
+wait_on = [ 2, 4 ]
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 mesh = SubResource( 1 )
@@ -28,3 +29,6 @@ shape = SubResource( 2 )
 
 [node name="Path" type="Path" parent="."]
 curve = SubResource( 3 )
+
+[node name="Waiter" type="Timer" parent="."]
+one_shot = true
