@@ -1,4 +1,4 @@
-extends ProgressBar
+extends Spatial
 
 
 # Declare member variables here. Examples:
@@ -12,10 +12,10 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-var velocity;
+#func _process(delta):
+#	pass
 
-func _process(delta):
-	velocity = get_node("../../Player").linear_velocity;
-	velocity.y = 0;
-	self.value = velocity.length_squared();
-	
+
+func _on_FinishingArea_body_entered(body):
+	if(body.is_in_group("Dice")):
+		$UI/CongratulationsPanel.visible = true;

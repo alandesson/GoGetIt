@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="SphereShape" id=5]
+radius = 10.0
+
+[sub_resource type="CylinderMesh" id=6]
+top_radius = 10.0
+bottom_radius = 10.0
+height = 0.1
+radial_segments = 16
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_color = Color( 1, 0.807843, 0.356863, 1 )
+
+[node name="FinishingArea" type="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01712, 28.2706 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
