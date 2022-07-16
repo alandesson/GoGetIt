@@ -1,6 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://BracoManual.gd" type="Script" id=2]
+[ext_resource path="res://Material.material" type="Material" id=3]
 
 [sub_resource type="CubeMesh" id=4]
 size = Vector3( 1, 1.5, 1 )
@@ -22,6 +24,16 @@ points = PoolVector3Array( -1, -0.05, -0.5, -1, 0.05, -0.5, 1, -0.05, -0.5, -1, 
 
 [sub_resource type="CubeMesh" id=9]
 size = Vector3( 2, 0.1, 1 )
+
+[sub_resource type="CubeMesh" id=10]
+material = ExtResource( 3 )
+size = Vector3( 2, 0.1, 1 )
+
+[sub_resource type="BoxShape" id=11]
+extents = Vector3( 1, 0.05, 0.4 )
+
+[sub_resource type="BoxShape" id=12]
+extents = Vector3( 1, 0.05, 0.4 )
 
 [node name="Player" type="VehicleBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.27823, 0 )
@@ -71,6 +83,7 @@ shape = SubResource( 8 )
 
 [node name="ArmJoint" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.913403, -0.407055, 0, 0.407055, 0.913403, 0, 0.539563, -0.232895 )
+visible = false
 
 [node name="MeshInstance" type="MeshInstance" parent="ArmJoint"]
 transform = Transform( 1, 0, 0, 0, 0.793534, -0.608526, 0, 0.608526, 0.793534, 0, -0.157513, 0.481932 )
@@ -83,3 +96,37 @@ transform = Transform( 1, 0, 0, 0, 0.921348, 0.388738, 0, -0.388738, 0.921348, 0
 mesh = SubResource( 9 )
 skeleton = NodePath("../../..")
 material/0 = null
+
+[node name="BracoManual" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0139875, 0.627839, -0.0762734 )
+script = ExtResource( 2 )
+
+[node name="braco" type="KinematicBody" parent="BracoManual"]
+transform = Transform( 1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0 )
+collision_layer = 4
+collision_mask = 4
+
+[node name="MeshInstance" type="MeshInstance" parent="BracoManual/braco"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5 )
+mesh = SubResource( 10 )
+skeleton = NodePath("../../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="BracoManual/braco"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5 )
+shape = SubResource( 11 )
+
+[node name="Pazinha" type="KinematicBody" parent="BracoManual/braco"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1 )
+collision_layer = 4
+collision_mask = 4
+
+[node name="MeshInstance2" type="MeshInstance" parent="BracoManual/braco/Pazinha"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5 )
+mesh = SubResource( 10 )
+skeleton = NodePath("../../../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="BracoManual/braco/Pazinha"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5 )
+shape = SubResource( 12 )

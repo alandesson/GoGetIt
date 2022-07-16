@@ -2,7 +2,7 @@ extends Spatial
 
 
 const min_angle = -60;
-var max_angle = 60;
+var max_angle = 0;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -65,4 +65,4 @@ func _physics_process(delta):
 	pazinha_drop()
 	var mouse_input = Input.get_axis("negativeRotation","positiveRotation") * 0.1;
 	if mouse_input != 0:
-		pass
+		abaixa_ombro(mouse_input)
