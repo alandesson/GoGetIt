@@ -39,12 +39,10 @@ shape = SubResource( 5 )
 
 [node name="LeftWheel" type="VehicleWheel" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.630996, -0.385742, -0.488032 )
-use_as_traction = true
 use_as_steering = true
-suspension_travel = 0.1
 suspension_stiffness = 50.0
-damping_compression = 2.0
-damping_relaxation = 1.8
+damping_compression = 1.9
+damping_relaxation = 2.0
 
 [node name="MeshInstance" type="MeshInstance" parent="LeftWheel"]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0 )
@@ -53,10 +51,10 @@ material/0 = null
 
 [node name="RightWheel" type="VehicleWheel" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.64231, -0.385742, -0.488032 )
-use_as_traction = true
 use_as_steering = true
-suspension_travel = 0.1
 suspension_stiffness = 50.0
+damping_compression = 1.9
+damping_relaxation = 2.0
 
 [node name="MeshInstance" type="MeshInstance" parent="RightWheel"]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0 )
@@ -64,10 +62,11 @@ mesh = SubResource( 7 )
 material/0 = null
 
 [node name="FrontWheel" type="VehicleWheel" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.386, 0.827974 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.40692, 0.596543 )
 use_as_traction = true
-suspension_travel = 0.1
 suspension_stiffness = 50.0
+damping_compression = 1.9
+damping_relaxation = 2.0
 
 [node name="MeshInstance" type="MeshInstance" parent="FrontWheel"]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0 )
@@ -80,7 +79,6 @@ shape = SubResource( 8 )
 
 [node name="ArmJoint" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.232895 )
-visible = false
 
 [node name="MeshInstance" type="MeshInstance" parent="ArmJoint"]
 transform = Transform( 1, 0, 0, 0, 0.793534, -0.608526, 0, 0.608526, 0.793534, 0, -0.157513, 0.481932 )
