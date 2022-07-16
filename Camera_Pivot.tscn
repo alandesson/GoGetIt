@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Camera_2.gd" type="Script" id=1]
+
+[node name="Camera_Pivot" type="Position3D"]
+transform = Transform( 1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0 )
+script = ExtResource( 1 )
+target_path = NodePath("../Player")
+
+[node name="Camera" type="ClippedCamera" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -15 )
+current = true
+collision_mask = 4
