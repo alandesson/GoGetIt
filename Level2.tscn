@@ -1002,3 +1002,4 @@ collision_mask = 16
 shape = SubResource( 34 )
 
 [connection signal="timeout" from="Sounds/Rat_timer" to="Sounds" method="_on_Rat_timer_timeout"]
+[connection signal="body_entered" from="FinishingArea" to="." method="_on_FinishingArea_body_entered"]
