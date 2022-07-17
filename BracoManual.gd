@@ -67,6 +67,7 @@ func roda_pazinha(angle):
 
 func _physics_process(delta):
 	pazinha_drop()
+	pazinha_bump()
 	if Input.is_action_just_released("PazinhaUp"):
 		roda_pazinha(1)
 	elif Input.is_action_just_released("PazinhaDown"):
