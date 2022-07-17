@@ -1,0 +1,87 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/Menu.png" type="Texture" id=1]
+[ext_resource path="res://UI/Deluxe/Deluxe_big.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scripts/Dice_Pick.gd" type="Script" id=3]
+
+[node name="Dice_Pick" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="BG" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="elementos" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -847.5
+margin_top = 78.0
+margin_right = 847.5
+margin_bottom = 734.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="elementos"]
+margin_right = 1695.0
+margin_bottom = 97.0
+custom_colors/font_color = Color( 0.227451, 0.196078, 0.803922, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Pick your dice"
+align = 1
+
+[node name="d4" type="Button" parent="elementos"]
+margin_top = 117.0
+margin_right = 1695.0
+margin_bottom = 220.0
+custom_colors/font_color = Color( 0.227451, 0.196078, 0.803922, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "d4"
+flat = true
+
+[node name="d6" type="Button" parent="elementos"]
+margin_top = 240.0
+margin_right = 1695.0
+margin_bottom = 343.0
+custom_colors/font_color = Color( 0.227451, 0.196078, 0.803922, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "d6"
+flat = true
+
+[node name="d8" type="Button" parent="elementos"]
+margin_top = 363.0
+margin_right = 1695.0
+margin_bottom = 466.0
+custom_colors/font_color = Color( 0.227451, 0.196078, 0.803922, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "d8"
+flat = true
+
+[node name="d12" type="Button" parent="elementos"]
+margin_top = 486.0
+margin_right = 1695.0
+margin_bottom = 589.0
+custom_colors/font_color = Color( 0.227451, 0.196078, 0.803922, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "d12"
+flat = true
+
+[node name="d20" type="Button" parent="elementos"]
+margin_top = 609.0
+margin_right = 1695.0
+margin_bottom = 712.0
+custom_colors/font_color = Color( 0.227451, 0.196078, 0.803922, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "d20"
+flat = true
+
+[connection signal="pressed" from="elementos/d4" to="." method="_on_d4_pressed"]
+[connection signal="pressed" from="elementos/d6" to="." method="_on_d6_pressed"]
+[connection signal="pressed" from="elementos/d8" to="." method="_on_d8_pressed"]
+[connection signal="pressed" from="elementos/d12" to="." method="_on_d12_pressed"]
+[connection signal="pressed" from="elementos/d20" to="." method="_on_d20_pressed"]
