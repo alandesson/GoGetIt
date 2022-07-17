@@ -31,7 +31,7 @@ func getNumber(numberFaces):
 	for i in range(0,direction.size()):
 		var a = rad2deg(vectorUPglobal.angle_to(to_global(direction[i])-translation))
 		# print(a)
-		if a <= 30.0 and a <= minDifference :
+		if a <= minDifference :
 			minDifference = a
 			mostSimilarDirectionIndex = i
 	return values[mostSimilarDirectionIndex] if (mostSimilarDirectionIndex >=0 ) else -1
