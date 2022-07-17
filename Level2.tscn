@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Obstáculos/Sweeper.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Camera_Pivot.tscn" type="PackedScene" id=2]
@@ -7,6 +7,10 @@
 [ext_resource path="res://EngineForce.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/Rotator.gd" type="Script" id=6]
 [ext_resource path="res://FinishingArea.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Sounds/Forgoten_tombs.mp3" type="AudioStream" id=8]
+[ext_resource path="res://Scripts/level1_sounds.gd" type="Script" id=9]
+[ext_resource path="res://Sounds/mouse-2.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Sounds/electic_razor.ogg" type="AudioStream" id=11]
 
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 10, 1, 35 )
@@ -86,7 +90,7 @@ bg_color = Color( 0.458824, 0.878431, 0.423529, 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Flooring"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 27.046 )
-collision_layer = 9
+collision_layer = 13
 __meta__ = {
 "_edit_group_": true
 }
@@ -100,7 +104,7 @@ material/0 = null
 
 [node name="StaticBody3" type="StaticBody" parent="Flooring"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 162.046 )
-collision_layer = 9
+collision_layer = 13
 __meta__ = {
 "_edit_group_": true
 }
@@ -114,7 +118,7 @@ material/0 = null
 
 [node name="StaticBody4" type="StaticBody" parent="Flooring"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 211.046 )
-collision_layer = 9
+collision_layer = 13
 __meta__ = {
 "_edit_group_": true
 }
@@ -128,7 +132,7 @@ material/0 = null
 
 [node name="StaticBody2" type="StaticBody" parent="Flooring"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 102.046 )
-collision_layer = 9
+collision_layer = 13
 __meta__ = {
 "_edit_group_": true
 }
@@ -174,7 +178,7 @@ material/0 = null
 
 [node name="StaticBody2" type="StaticBody" parent="Flooring/Stairs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.744386, 62.046 )
-collision_layer = 9
+collision_layer = 13
 __meta__ = {
 "_edit_group_": true
 }
@@ -188,7 +192,7 @@ material/0 = null
 
 [node name="StaticBody3" type="StaticBody" parent="Flooring/Stairs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.994386, 63.046 )
-collision_layer = 9
+collision_layer = 13
 __meta__ = {
 "_edit_group_": true
 }
@@ -202,7 +206,7 @@ material/0 = null
 
 [node name="StaticBody4" type="StaticBody" parent="Flooring/Stairs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24439, 64.046 )
-collision_layer = 9
+collision_layer = 13
 __meta__ = {
 "_edit_group_": true
 }
@@ -216,7 +220,7 @@ material/0 = null
 
 [node name="StaticBody5" type="StaticBody" parent="Flooring/Stairs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49439, 65.046 )
-collision_layer = 9
+collision_layer = 13
 __meta__ = {
 "_edit_group_": true
 }
@@ -230,7 +234,7 @@ material/0 = null
 
 [node name="StaticBody6" type="StaticBody" parent="Flooring/Stairs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.74439, 66.046 )
-collision_layer = 9
+collision_layer = 13
 __meta__ = {
 "_edit_group_": true
 }
@@ -244,7 +248,7 @@ material/0 = null
 
 [node name="StaticBody8" type="StaticBody" parent="Flooring/Stairs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.99439, 67.046 )
-collision_layer = 9
+collision_layer = 13
 __meta__ = {
 "_edit_group_": true
 }
@@ -258,7 +262,7 @@ material/0 = null
 
 [node name="StaticBody9" type="StaticBody" parent="Flooring/Stairs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.24439, 68.046 )
-collision_layer = 9
+collision_layer = 13
 __meta__ = {
 "_edit_group_": true
 }
@@ -272,7 +276,7 @@ material/0 = null
 
 [node name="StaticBody10" type="StaticBody" parent="Flooring/Stairs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.49439, 69.046 )
-collision_layer = 9
+collision_layer = 13
 __meta__ = {
 "_edit_group_": true
 }
@@ -286,7 +290,7 @@ material/0 = null
 
 [node name="StaticBody11" type="StaticBody" parent="Flooring/Stairs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.74439, 70.046 )
-collision_layer = 9
+collision_layer = 13
 __meta__ = {
 "_edit_group_": true
 }
@@ -300,7 +304,7 @@ material/0 = null
 
 [node name="StaticBody12" type="StaticBody" parent="Flooring/Stairs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.99439, 71.046 )
-collision_layer = 9
+collision_layer = 13
 __meta__ = {
 "_edit_group_": true
 }
@@ -314,7 +318,7 @@ material/0 = null
 
 [node name="StaticBody13" type="StaticBody" parent="Flooring/Stairs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.24439, 72.046 )
-collision_layer = 9
+collision_layer = 13
 __meta__ = {
 "_edit_group_": true
 }
@@ -328,7 +332,7 @@ material/0 = null
 
 [node name="StaticBody14" type="StaticBody" parent="Flooring/Stairs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.49439, 73.046 )
-collision_layer = 9
+collision_layer = 13
 __meta__ = {
 "_edit_group_": true
 }
@@ -342,7 +346,7 @@ material/0 = null
 
 [node name="StaticBody15" type="StaticBody" parent="Flooring/Stairs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.74439, 74.046 )
-collision_layer = 9
+collision_layer = 13
 __meta__ = {
 "_edit_group_": true
 }
@@ -356,7 +360,7 @@ material/0 = null
 
 [node name="StaticBody16" type="StaticBody" parent="Flooring/Stairs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.99439, 75.046 )
-collision_layer = 9
+collision_layer = 13
 __meta__ = {
 "_edit_group_": true
 }
@@ -370,7 +374,7 @@ material/0 = null
 
 [node name="StaticBody17" type="StaticBody" parent="Flooring/Stairs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.24439, 76.046 )
-collision_layer = 9
+collision_layer = 13
 __meta__ = {
 "_edit_group_": true
 }
@@ -384,7 +388,7 @@ material/0 = null
 
 [node name="StaticBody18" type="StaticBody" parent="Flooring/Stairs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 77.046 )
-collision_layer = 9
+collision_layer = 13
 __meta__ = {
 "_edit_group_": true
 }
@@ -398,7 +402,7 @@ material/0 = null
 
 [node name="StaticBody28" type="StaticBody" parent="Flooring"]
 transform = Transform( 1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, 1, -0.670004, 4, 250.005 )
-collision_layer = 9
+collision_layer = 13
 __meta__ = {
 "_edit_group_": true
 }
@@ -412,7 +416,7 @@ shape = SubResource( 19 )
 
 [node name="StaticBody29" type="StaticBody" parent="Flooring"]
 transform = Transform( 1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, 1, -0.670002, 4, 260.005 )
-collision_layer = 9
+collision_layer = 13
 __meta__ = {
 "_edit_group_": true
 }
@@ -603,6 +607,36 @@ material/0 = null
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
 shape = SubResource( 17 )
 
+[node name="Sounds" type="Spatial" parent="."]
+script = ExtResource( 9 )
+
+[node name="music" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 8 )
+volume_db = -10.0
+autoplay = true
+
+[node name="rats" type="AudioStreamPlayer3D" parent="Sounds"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.69331, 34.1854 )
+stream = ExtResource( 10 )
+attenuation_model = 3
+unit_db = -5.0
+max_distance = 70.0
+out_of_range_mode = 1
+
+[node name="Rat_timer" type="Timer" parent="Sounds"]
+wait_time = 5.0
+autostart = true
+
+[node name="roomba" type="AudioStreamPlayer3D" parent="Sounds"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.42089, 96.7511 )
+stream = ExtResource( 11 )
+attenuation_model = 3
+unit_db = -0.5
+pitch_scale = 1.81
+autoplay = true
+max_distance = 150.0
+out_of_range_mode = 1
+
 [node name="Camera_Pivot" parent="." instance=ExtResource( 2 )]
 target_path = NodePath("../Player2")
 
@@ -646,6 +680,8 @@ align = 1
 
 [node name="FinishingArea" parent="." instance=ExtResource( 7 )]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -0.6308, 5.29351, 260.159 )
+
+[connection signal="timeout" from="Sounds/Rat_timer" to="Sounds" method="_on_Rat_timer_timeout"]
 
 [editable path="Obstacles/Sweeper"]
 [editable path="Obstacles/Sweeper2"]

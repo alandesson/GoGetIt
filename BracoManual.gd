@@ -8,7 +8,7 @@ var elevacao = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$braco.add_collision_exception_with($bod)
+#	$braco.add_collision_exception_with($bod)
 	$braco/Pazinha.add_collision_exception_with($braco)
 	
 func rotate_braco(angle):
@@ -68,9 +68,9 @@ func roda_pazinha(angle):
 func _physics_process(delta):
 	pazinha_drop()
 	if Input.is_action_just_released("PazinhaUp"):
-		roda_pazinha(3)
+		roda_pazinha(1)
 	elif Input.is_action_just_released("PazinhaDown"):
-		roda_pazinha(-3)
+		roda_pazinha(-1)
 	var braco_direcao = Input.get_axis("BracoUp","BracoDown")
 	roda_ombro(deg2rad(braco_direcao/2))
 	if Input.is_action_pressed("ElevadorOmbro"):
