@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Obstáculos/Sweeper.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Camera_Pivot.tscn" type="PackedScene" id=2]
@@ -7,6 +7,10 @@
 [ext_resource path="res://EngineForce.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/Rotator.gd" type="Script" id=6]
 [ext_resource path="res://FinishingArea.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Sounds/Forgoten_tombs.mp3" type="AudioStream" id=8]
+[ext_resource path="res://Scripts/level1_sounds.gd" type="Script" id=9]
+[ext_resource path="res://Sounds/mouse-2.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Sounds/electic_razor.ogg" type="AudioStream" id=11]
 
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 10, 1, 35 )
@@ -80,18 +84,73 @@ extents = Vector3( 25, 1, 1 )
 [sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.458824, 0.878431, 0.423529, 1 )
 
+[sub_resource type="Animation" id=22]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Level_Name:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Level_Name:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "start"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Level_Name:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1, 2, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Level_Name:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
 [sub_resource type="SpatialMaterial" id=26]
 albedo_color = Color( 0.137255, 0.619608, 0.235294, 1 )
 
-[sub_resource type="CylinderMesh" id=23]
+[sub_resource type="CylinderMesh" id=27]
 material = SubResource( 26 )
 top_radius = 5.0
 bottom_radius = 5.0
 
-[sub_resource type="CylinderShape" id=24]
+[sub_resource type="CylinderShape" id=28]
 radius = 5.0
 
-[sub_resource type="CylinderShape" id=25]
+[sub_resource type="CylinderShape" id=29]
 radius = 5.0
 height = 2.6
 
@@ -618,6 +677,36 @@ material/0 = null
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
 shape = SubResource( 17 )
 
+[node name="Sounds" type="Spatial" parent="."]
+script = ExtResource( 9 )
+
+[node name="music" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 8 )
+volume_db = -10.0
+autoplay = true
+
+[node name="rats" type="AudioStreamPlayer3D" parent="Sounds"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.69331, 34.1854 )
+stream = ExtResource( 10 )
+attenuation_model = 3
+unit_db = -5.0
+max_distance = 70.0
+out_of_range_mode = 1
+
+[node name="Rat_timer" type="Timer" parent="Sounds"]
+wait_time = 5.0
+autostart = true
+
+[node name="roomba" type="AudioStreamPlayer3D" parent="Sounds"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.42089, 96.7511 )
+stream = ExtResource( 11 )
+attenuation_model = 3
+unit_db = -0.5
+pitch_scale = 1.81
+autoplay = true
+max_distance = 150.0
+out_of_range_mode = 1
+
 [node name="Camera_Pivot" parent="." instance=ExtResource( 2 )]
 target_path = NodePath("../Player2")
 
@@ -625,9 +714,11 @@ target_path = NodePath("../Player2")
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2.2782, -2 )
 
 [node name="D4" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 0, 1.4, -11.283 )
+transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 0, 1.4, -11 )
 collision_layer = 23
 collision_mask = 23
+linear_damp = 2.0
+angular_damp = 2.0
 
 [node name="UI" type="Control" parent="."]
 margin_right = 40.0
@@ -661,28 +752,47 @@ margin_bottom = 71.0
 text = "Congratulations, You Got It."
 align = 1
 
+[node name="Level_Name" type="Label" parent="UI"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 388.0
+margin_top = 250.0
+margin_right = 598.0
+margin_bottom = 264.0
+text = "The FORGOTTEN BASEMENT"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI"]
+autoplay = "start"
+anims/RESET = SubResource( 22 )
+anims/start = SubResource( 23 )
+
 [node name="FinishingArea" parent="." instance=ExtResource( 7 )]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -0.6308, 5.29351, 260.159 )
 
-[node name="DiceZone" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.283 )
+[node name="DiceZoneL2" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11 )
 
-[node name="ChaoPlayer" type="StaticBody" parent="DiceZone"]
+[node name="ChaoPlayer" type="StaticBody" parent="DiceZoneL2"]
 collision_layer = 13
 
-[node name="MeshInstance" type="MeshInstance" parent="DiceZone/ChaoPlayer"]
-mesh = SubResource( 23 )
+[node name="MeshInstance" type="MeshInstance" parent="DiceZoneL2/ChaoPlayer"]
+mesh = SubResource( 27 )
 material/0 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="DiceZone/ChaoPlayer"]
-shape = SubResource( 24 )
+[node name="CollisionShape" type="CollisionShape" parent="DiceZoneL2/ChaoPlayer"]
+shape = SubResource( 28 )
 
-[node name="ChaoDado" type="StaticBody" parent="DiceZone"]
+[node name="ChaoDado" type="StaticBody" parent="DiceZoneL2"]
 collision_layer = 16
 collision_mask = 16
 
-[node name="CollisionShape" type="CollisionShape" parent="DiceZone/ChaoDado"]
-shape = SubResource( 25 )
+[node name="CollisionShape" type="CollisionShape" parent="DiceZoneL2/ChaoDado"]
+shape = SubResource( 29 )
+
+[connection signal="timeout" from="Sounds/Rat_timer" to="Sounds" method="_on_Rat_timer_timeout"]
 
 [editable path="Obstacles/Sweeper"]
 [editable path="Obstacles/Sweeper2"]

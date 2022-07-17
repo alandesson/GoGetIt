@@ -45,6 +45,10 @@ func balance(delta):
 func _physics_process(delta):
 	movement(delta);
 	balance(delta);
+	if force != 0 or Input.get_axis("right", "left") != 0:
+		$Audio_Player/motor.playing = true
+	else:
+		$Audio_Player/motor.playing = false
 
 
 func _ready():
