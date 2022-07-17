@@ -108,11 +108,11 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="SpatialMaterial" id=22]
+[sub_resource type="SpatialMaterial" id=26]
 albedo_color = Color( 0.137255, 0.619608, 0.235294, 1 )
 
 [sub_resource type="CylinderMesh" id=23]
-material = SubResource( 22 )
+material = SubResource( 26 )
 top_radius = 5.0
 bottom_radius = 5.0
 
@@ -613,7 +613,7 @@ anims/RESET = SubResource( 14 )
 anims/start = SubResource( 15 )
 
 [node name="DiceZoneL1" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0316181, -9 )
 
 [node name="ChaoPlayer" type="StaticBody" parent="DiceZoneL1"]
 collision_layer = 13

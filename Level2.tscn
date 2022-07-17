@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Modelos/Mouse.material" type="Material" id=1]
 [ext_resource path="res://Camera_Pivot.tscn" type="PackedScene" id=2]
@@ -215,18 +215,18 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="SpatialMaterial" id=26]
+[sub_resource type="SpatialMaterial" id=31]
 albedo_color = Color( 0.137255, 0.619608, 0.235294, 1 )
 
-[sub_resource type="CylinderMesh" id=27]
-material = SubResource( 26 )
+[sub_resource type="CylinderMesh" id=32]
+material = SubResource( 31 )
 top_radius = 5.0
 bottom_radius = 5.0
 
-[sub_resource type="CylinderShape" id=28]
+[sub_resource type="CylinderShape" id=33]
 radius = 5.0
 
-[sub_resource type="CylinderShape" id=29]
+[sub_resource type="CylinderShape" id=34]
 radius = 5.0
 height = 2.6
 
@@ -986,23 +986,23 @@ anims/start = SubResource( 23 )
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -0.6308, 5.29351, 260.159 )
 
 [node name="DiceZoneL2" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0557449, -11 )
 
 [node name="ChaoPlayer" type="StaticBody" parent="DiceZoneL2"]
 collision_layer = 13
 
 [node name="MeshInstance" type="MeshInstance" parent="DiceZoneL2/ChaoPlayer"]
-mesh = SubResource( 27 )
+mesh = SubResource( 32 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="DiceZoneL2/ChaoPlayer"]
-shape = SubResource( 28 )
+shape = SubResource( 33 )
 
 [node name="ChaoDado" type="StaticBody" parent="DiceZoneL2"]
 collision_layer = 16
 collision_mask = 16
 
 [node name="CollisionShape" type="CollisionShape" parent="DiceZoneL2/ChaoDado"]
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [connection signal="timeout" from="Sounds/Rat_timer" to="Sounds" method="_on_Rat_timer_timeout"]
