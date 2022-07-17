@@ -33,8 +33,8 @@ surfaces/1 = {
 }
 
 [node name="D4" type="RigidBody" groups=["Dice"]]
-collision_layer = 7
-collision_mask = 7
+collision_layer = 23
+collision_mask = 23
 gravity_scale = 2.0
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
