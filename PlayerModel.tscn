@@ -1,10 +1,11 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://BracoManual.gd" type="Script" id=2]
 [ext_resource path="res://Modelos/Metal1.material" type="Material" id=3]
 [ext_resource path="res://Modelos/Tire.material" type="Material" id=4]
 [ext_resource path="res://Modelos/Eyes.material" type="Material" id=5]
+[ext_resource path="res://Sounds/electic_razor.ogg" type="AudioStream" id=6]
 
 [sub_resource type="ConvexPolygonShape" id=1]
 points = PoolVector3Array( -0.542564, 3.22416, -0.531411, 0.969517, 0.146906, -0.980353, -0.993035, 0.146906, -0.980353, 0.794224, 2.77855, 0.817909, 0.964225, 2.40701, -0.973026, -0.976781, 2.39801, 0.972138, -0.976781, 2.39801, -0.957849, 0.986159, -0.0314088, 1.76007, -1, -0.0155292, 1.74667, 0.551489, 3.17371, 0.573825, 0.559687, 3.19653, -0.515873, -0.526013, 3.17371, 0.573825, 0.936988, 2.43312, 0.962123, -0.993562, 0.0959708, -0.477289, -0.778703, 2.84308, 0.774073, 0.762838, 2.85542, -0.771055, 0.970044, 0.0959708, -0.477289, -0.778703, 2.84308, -0.759699, -0.992203, -0.00273451, 1.33324, 0.807091, 2.79726, -0.763327, -0.87501, 2.64178, -0.854743, -0.911657, 2.43312, 0.962123, -0.628292, 3.08581, 0.624475, -0.769058, 2.77855, 0.817909, 0.61142, 3.10176, -0.61841, 0.861807, 2.65438, -0.869749, 0.955417, 2.44918, -0.911018, -0.87501, 2.64178, 0.871412, 0.853312, 2.69375, -0.808216 )
@@ -267,3 +268,10 @@ shape = SubResource( 17 )
 [node name="Tras" type="CollisionShape" parent="Robot/BracoManual/braco/Pazinha"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0178972, 0.102129, -0.885504 )
 shape = SubResource( 18 )
+
+[node name="Audio_Player" type="Spatial" parent="."]
+
+[node name="motor" type="AudioStreamPlayer" parent="Audio_Player"]
+stream = ExtResource( 6 )
+volume_db = -15.0
+pitch_scale = 1.5
