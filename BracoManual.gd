@@ -4,6 +4,8 @@ extends Spatial
 const min_angle = -60;
 var max_angle = 0;
 
+var elevacao = 100
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$braco.add_collision_exception_with($bod)
@@ -63,6 +65,16 @@ func roda_pazinha(angle):
 
 func _physics_process(delta):
 	pazinha_drop()
-	var mouse_input = Input.get_axis("negativeRotation","positiveRotation") * 0.1;
-	if mouse_input != 0:
-		abaixa_ombro(mouse_input)
+	var pa_direcao = Input.get_axis("PazinhaUp", "PazinhaDown")
+	var braco_direcao = Input.get_axis("BracoUp","BracoDown")
+	roda_pazinha(pa_direcao)
+	roda_ombro(braco_direcao)
+	if(Input.action_press("ElevadorOmbro")):
+		var aux = clamp(elevacao - 10, 0, 100)
+		abaixa_ombro(aux - elevacao)
+		elevacao = aux
+	else:
+		var aux = clamp(elevacao + 10, 0, 100)
+		abaixa_ombro(aux - elevacao)
+		elevacao = aux
+		
