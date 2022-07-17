@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Dados/D4.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Camera_Pivot.tscn" type="PackedScene" id=2]
@@ -107,6 +107,21 @@ tracks/1/keys = {
 "update": 1,
 "values": [ true, false ]
 }
+
+[sub_resource type="SpatialMaterial" id=22]
+albedo_color = Color( 0.137255, 0.619608, 0.235294, 1 )
+
+[sub_resource type="CylinderMesh" id=23]
+material = SubResource( 22 )
+top_radius = 5.0
+bottom_radius = 5.0
+
+[sub_resource type="CylinderShape" id=24]
+radius = 5.0
+
+[sub_resource type="CylinderShape" id=25]
+radius = 5.0
+height = 2.6
 
 [node name="Level1" type="Spatial"]
 script = ExtResource( 6 )
@@ -539,7 +554,11 @@ target_path = NodePath("../Player2")
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.27823, -2 )
 
 [node name="D4" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -0.0686042, 4.02367, 0.829004 )
+transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 0, 1.4, -9 )
+collision_layer = 23
+collision_mask = 23
+linear_damp = 2.0
+angular_damp = 2.0
 
 [node name="FinishingArea" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -31.6308, 6.29351, 43.7033 )
@@ -592,5 +611,25 @@ text = "The SOFA UNDERSIDE"
 autoplay = "start"
 anims/RESET = SubResource( 14 )
 anims/start = SubResource( 15 )
+
+[node name="DiceZoneL1" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9 )
+
+[node name="ChaoPlayer" type="StaticBody" parent="DiceZoneL1"]
+collision_layer = 13
+
+[node name="MeshInstance" type="MeshInstance" parent="DiceZoneL1/ChaoPlayer"]
+mesh = SubResource( 23 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="DiceZoneL1/ChaoPlayer"]
+shape = SubResource( 24 )
+
+[node name="ChaoDado" type="StaticBody" parent="DiceZoneL1"]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape" type="CollisionShape" parent="DiceZoneL1/ChaoDado"]
+shape = SubResource( 25 )
 
 [connection signal="body_entered" from="FinishingArea" to="." method="_on_FinishingArea_body_entered"]
