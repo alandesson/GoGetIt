@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/UI-buzzer-4.wav-b533c06b20ce2d9959d47a2b9f6756a7.sample"
+
+[deps]
+
+source_file="res://Audio/UI-buzzer-4.wav"
+dest_files=[ "res://.import/UI-buzzer-4.wav-b533c06b20ce2d9959d47a2b9f6756a7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
