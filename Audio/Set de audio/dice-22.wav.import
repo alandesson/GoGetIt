@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/dice-22.wav-4e21ba2b6752ac580ad162e30dc3c4a7.sample"
+
+[deps]
+
+source_file="res://Audio/Set de audio/dice-22.wav"
+dest_files=[ "res://.import/dice-22.wav-4e21ba2b6752ac580ad162e30dc3c4a7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

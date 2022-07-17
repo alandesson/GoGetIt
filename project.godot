@@ -11,9 +11,19 @@ config_version=4
 [application]
 
 config/name="GoGetIt"
-run/main_scene="res://Spatial.tscn"
+run/main_scene="res://UI/Menu.tscn"
 boot_splash/image="res://splash.png"
 config/icon="res://icon.png"
+
+[autoload]
+
+ChooseDice="*res://Scripts/choose_dice.gd"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/size/fullscreen=true
 
 [input]
 
@@ -96,4 +106,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"

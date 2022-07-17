@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Dados/D4.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Camera_Pivot.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://EngineForce.gd" type="Script" id=5]
 [ext_resource path="res://GameManager.gd" type="Script" id=6]
 [ext_resource path="res://Sounds/Forgoten_tombs.mp3" type="AudioStream" id=7]
+[ext_resource path="res://UI/Deluxe/Deluxe.tres" type="DynamicFont" id=8]
 
 [sub_resource type="CubeMesh" id=1]
 size = Vector3( 6, 2, 10 )
@@ -108,11 +109,11 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="SpatialMaterial" id=22]
+[sub_resource type="SpatialMaterial" id=26]
 albedo_color = Color( 0.137255, 0.619608, 0.235294, 1 )
 
 [sub_resource type="CylinderMesh" id=23]
-material = SubResource( 22 )
+material = SubResource( 26 )
 top_radius = 5.0
 bottom_radius = 5.0
 
@@ -564,8 +565,8 @@ angular_damp = 2.0
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -31.6308, 6.29351, 43.7033 )
 
 [node name="UI" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="ProgressBar" type="ProgressBar" parent="UI"]
 margin_left = 71.0
@@ -601,10 +602,11 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 426.0
-margin_top = 254.0
-margin_right = 636.0
-margin_bottom = 268.0
+margin_left = -227.5
+margin_top = -24.5
+margin_right = 227.5
+margin_bottom = 24.5
+custom_fonts/font = ExtResource( 8 )
 text = "The SOFA UNDERSIDE"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UI"]
@@ -613,7 +615,7 @@ anims/RESET = SubResource( 14 )
 anims/start = SubResource( 15 )
 
 [node name="DiceZoneL1" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0316181, -9 )
 
 [node name="ChaoPlayer" type="StaticBody" parent="DiceZoneL1"]
 collision_layer = 13

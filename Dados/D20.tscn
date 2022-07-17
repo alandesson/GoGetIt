@@ -21,14 +21,16 @@ surfaces/0 = {
 points = PoolVector3Array( 0.850484, -0.187618, 0.490931, 0.525578, 0.794654, 0.303443, -0.000166476, 0.187463, 0.982055, -0.000166476, -0.794654, 0.606886, 0.525578, -0.794654, -0.303635, 0.850484, 0.187463, -0.491123, -0.525745, 0.794654, 0.303443, -0.000166476, 0.794654, -0.607078, -0.850651, -0.187618, 0.490931, -0.525745, -0.794654, -0.303635, -0.000166476, -0.187618, -0.982247, -0.850651, 0.187463, -0.491123 )
 
 [node name="D20" type="RigidBody" groups=["Dice"]]
-transform = Transform( 0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 collision_layer = 7
 collision_mask = 7
 gravity_scale = 2.0
 
 [node name="Mesh" type="MeshInstance" parent="."]
+transform = Transform( 0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 0, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 0, 0, 0 )
 shape = SubResource( 2 )

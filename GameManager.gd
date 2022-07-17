@@ -8,7 +8,29 @@ extends Spatial
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	var dice_coords = $D4.translation
+	$D4.queue_free()
+	match ChooseDice.dice_choice:
+		4:
+			var new_dice = load("res://Dados/D4.tscn").instance()
+			new_dice.translation = dice_coords
+			add_child(new_dice)
+		6:
+			var new_dice = load("res://Dados/D6.tscn").instance()
+			new_dice.translation = dice_coords
+			add_child(new_dice)
+		8:
+			var new_dice = load("res://Dados/D8.tscn").instance()
+			new_dice.translation = dice_coords
+			add_child(new_dice)
+		12:
+			var new_dice = load("res://Dados/D12.tscn").instance()
+			new_dice.translation = dice_coords
+			add_child(new_dice)
+		20:
+			var new_dice = load("res://Dados/D20.tscn").instance()
+			new_dice.translation = dice_coords
+			add_child(new_dice)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
