@@ -47,33 +47,33 @@ func on_stop():
 func loadValuesD4():
 	if direction.size() == 0:
 		direction.append(Vector3.DOWN)
-		values.append(1)
+		values.append(4)
 		
 		direction.append(Vector3(-0.94280904,1.0/3.0,0))
-		values.append(2)
-		
-		direction.append(Vector3(0.4714,1.0/3.0,0.8165))
 		values.append(3)
 		
+		direction.append(Vector3(0.4714,1.0/3.0,0.8165))
+		values.append(1)
+		
 		direction.append(Vector3(0.4714,1.0/3.0,-0.8165))
-		values.append(4)
+		values.append(2)
 
 func loadValuesD6():
 	if direction.size() == 0:
 		direction.append(Vector3.UP)
-		values.append(2);
+		values.append(1);
 		direction.append(Vector3.DOWN);
-		values.append(5); 
+		values.append(6); 
  
 		direction.append(Vector3.LEFT);
-		values.append(3); 
+		values.append(2); 
 		direction.append(Vector3.RIGHT);
-		values.append(4);
+		values.append(5);
  
 		direction.append(Vector3.FORWARD);
-		values.append(6); 
+		values.append(4); 
 		direction.append(Vector3.BACK);
-		values.append(1);
+		values.append(3);
 
 func loadValuesD8():
 	if direction.size() == 0:
@@ -84,16 +84,16 @@ func loadValuesD8():
 		values.append(2)
 		
 		direction.append(Vector3(1,-1,1))
-		values.append(3)
+		values.append(6)
 		
 		direction.append(Vector3(1,-1,-1))
-		values.append(4)
-		
-		direction.append(Vector3(-1,1,1))
 		values.append(5)
 		
+		direction.append(Vector3(-1,1,1))
+		values.append(4)
+		
 		direction.append(Vector3(-1,1,-1))
-		values.append(6)
+		values.append(3)
 		
 		direction.append(Vector3(-1,-1,1))
 		values.append(7)
@@ -104,98 +104,98 @@ func loadValuesD8():
 func loadValuesD12():
 	if direction.size() == 0:
 		direction.append(Vector3.UP)
-		values.append(1)
-		direction.append(Vector3.DOWN)
 		values.append(12)
+		direction.append(Vector3.DOWN)
+		values.append(1)
 		
-		direction.append(Vector3(-0.4472135,0.894427,0))
-		values.append(11)
-		
-		direction.append(Vector3(-0.1382,0.894427,0.42533))
+		direction.append(Vector3(0, 0.894427, -0.4472135))
 		values.append(10)
 		
-		direction.append(Vector3(-0.1382,0.894427,-0.42533))
+		direction.append(Vector3(0.42533,0.894427, -0.1382))
+		values.append(11)
+		
+		direction.append(Vector3(-0.42533,0.894427, -0.1382))
 		values.append(9)
 		
-		direction.append(Vector3(0.3618,0.894427,0.2629))
+		direction.append(Vector3(0.2629,0.894427, 0.3618))
 		values.append(8)
 		
-		direction.append(Vector3(0.3618,-0.894427,-0.2629))
-		values.append(7)
+		direction.append(Vector3(-0.2629,0.894427, 0.3618))
+		values.append(6)
 		
-		direction.append(Vector3(0.4472135,-0.894427,0))
-		values.append(2)
-		
-		direction.append(Vector3(0.1382,-0.894427,-0.42533))
+		direction.append(Vector3(0,-0.894427, 0.4472135))
 		values.append(3)
 		
-		direction.append(Vector3(0.1382,-0.894427,0.42533))
+		direction.append(Vector3(-0.42533,-0.894427, 0.1382))
+		values.append(2)
+		
+		direction.append(Vector3(0.42533,-0.894427, 0.1382))
 		values.append(4)
 		
-		direction.append(Vector3(-0.3618,-0.894427,-0.2629))
-		values.append(5)
+		direction.append(Vector3(-0.2629,-0.894427, -0.3618))
+		values.append(7)
 		
-		direction.append(Vector3(-0.3618,-0.894427,0.2629))
-		values.append(6)
+		direction.append(Vector3(0.2629,-0.894427, -0.3618))
+		values.append(5)
 
 func loadValuesD20():
 	if direction.size() == 0:
 		direction.append(Vector3.UP)
-		values.append(1)
+		values.append(6)
 		direction.append(Vector3.DOWN)
-		values.append(20)
-		
-		direction.append(Vector3(0.5774, 0.7454, 0.3333))
-		values.append(2)
-		
-		direction.append(Vector3(0.5774, -0.3333, 0.7454))
-		values.append(3)
-		
-		direction.append(Vector3(0.5774, 0.3333, -0.7454))
-		values.append(4)
-		
-		direction.append(Vector3(0.5774, -0.7454, -0.3333))
-		values.append(5)
-		
-		direction.append(Vector3(-0.5774, 0.7454,0.3333))
-		values.append(16)
-		
-		direction.append(Vector3(-0.5774, -0.3333, 0.7454))
-		values.append(17)
-		
-		direction.append(Vector3(-0.5774, 0.3333, -0.7454))
-		values.append(18)
-		
-		direction.append(Vector3(-0.5774, -0.7454, -0.3333))
-		values.append(19)
-		
-		direction.append(Vector3(0.3568, 0.3333, 0.8727))
-		values.append(7)
-		
-		direction.append(Vector3(-0.3568, 0.3333, 0.8727))
-		values.append(8)
-		
-		direction.append(Vector3(0.3568, -0.3333,-0.8727))
-		values.append(13)
-		
-		direction.append(Vector3(-0.3568, -0.3333,-0.8727))
-		values.append(14)
-		
-		direction.append(Vector3(0.9342, 0.3333, -0.1273))
-		values.append(9)
-		
-		direction.append(Vector3(0.9342,-0.3333 ,0.1273))
-		values.append(10)
-		
-		direction.append(Vector3(-0.9342, 0.3333, -0.1273))
-		values.append(11)
-		
-		direction.append(Vector3(-0.9342,-0.3333 ,0.1273))
 		values.append(12)
 		
+		direction.append(Vector3(0.5774, 0.7454, 0.3333))
+		values.append(10)
+		
+		direction.append(Vector3(0.5774, -0.3333, 0.7454))
+		values.append(9)
+		
+		direction.append(Vector3(0.5774, 0.3333, -0.7454))
+		values.append(18)
+		
+		direction.append(Vector3(0.5774, -0.7454, -0.3333))
+		values.append(7)
+		
+		direction.append(Vector3(-0.5774, 0.7454,0.3333))
+		values.append(19)
+		
+		direction.append(Vector3(-0.5774, -0.3333, 0.7454))
+		values.append(16)
+		
+		direction.append(Vector3(-0.5774, 0.3333, -0.7454))
+		values.append(8)
+		
+		direction.append(Vector3(-0.5774, -0.7454, -0.3333))
+		values.append(15)
+		
+		direction.append(Vector3(0.3568, 0.3333, 0.8727))
+		values.append(14)
+		
+		direction.append(Vector3(-0.3568, 0.3333, 0.8727))
+		values.append(20)
+		
+		direction.append(Vector3(0.3568, -0.3333,-0.8727))
+		values.append(4)
+		
+		direction.append(Vector3(-0.3568, -0.3333,-0.8727))
+		values.append(5)
+		
+		direction.append(Vector3(0.9342, 0.3333, -0.1273))
+		values.append(17)
+		
+		direction.append(Vector3(0.9342,-0.3333 ,0.1273))
+		values.append(2)
+		
+		direction.append(Vector3(-0.9342, 0.3333, -0.1273))
+		values.append(1)
+		
+		direction.append(Vector3(-0.9342,-0.3333 ,0.1273))
+		values.append(11)
+		
 		direction.append(Vector3(0.0000, 0.7454, -0.6667))
-		values.append(6)
+		values.append(13)
 		
 		direction.append(Vector3(0.0000, -0.7454,0.6667))
-		values.append(15)
+		values.append(3)
 		

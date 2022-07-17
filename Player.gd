@@ -45,7 +45,15 @@ func balance(delta):
 func _physics_process(delta):
 	movement(delta);
 	balance(delta);
+	if force != 0 or Input.get_axis("right", "left") != 0:
+		$Audio_Player/motor.playing = true
+	else:
+		$Audio_Player/motor.playing = false
 
 
 func _ready():
 	brake = 2;
+	
+func _process(delta):
+	if Input.is_action_just_pressed("restart"):
+		get_tree().reload_current_scene()
