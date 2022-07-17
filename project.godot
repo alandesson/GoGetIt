@@ -11,9 +11,13 @@ config_version=4
 [application]
 
 config/name="GoGetIt"
-run/main_scene="res://Spatial.tscn"
+run/main_scene="res://UI/Menu.tscn"
 boot_splash/image="res://splash.png"
 config/icon="res://icon.png"
+
+[autoload]
+
+ChooseDice="*res://Scripts/choose_dice.gd"
 
 [display]
 

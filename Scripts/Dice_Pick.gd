@@ -17,20 +17,25 @@ func _ready():
 
 
 func _on_d4_pressed():
-	get_tree().change_scene_to(load("res://Level2_d4"))
+	ChooseDice.dice_choice = 4
+	get_tree().change_scene_to(load("res://Level2.tscn"))
 
 
 func _on_d6_pressed():
-	get_tree().change_scene_to(load("res://Level2_d4"))
+	ChooseDice.dice_choice = 6
+	get_tree().change_scene_to(load("res://Level2.tscn"))
 
 
 func _on_d8_pressed():
-	get_tree().change_scene_to(load("res://Level2_d4"))
+	ChooseDice.dice_choice = 8
+	get_tree().change_scene_to(load("res://Level2.tscn"))
 
 
 func _on_d12_pressed():
-	get_tree().change_scene_to(load("res://Level2_d4"))
+	ChooseDice.dice_choice = 12
+	get_tree().change_scene_to(load("res://Level2.tscn"))
 
 
 func _on_d20_pressed():
-	get_tree().change_scene_to(load("res://Level2_d4"))
+	ChooseDice.dice_choice = 20
+	get_tree().change_scene_to(load("res://Level2.tscn"))

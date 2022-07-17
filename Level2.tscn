@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://Modelos/Mouse.material" type="Material" id=1]
 [ext_resource path="res://Camera_Pivot.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Scripts/Sweeper.gd" type="Script" id=13]
 [ext_resource path="res://Modelos/Material.material" type="Material" id=14]
 [ext_resource path="res://UI/Deluxe/Deluxe.tres" type="DynamicFont" id=15]
+[ext_resource path="res://GameManager.gd" type="Script" id=16]
 
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 10, 1, 35 )
@@ -245,6 +246,7 @@ radius = 5.0
 height = 2.6
 
 [node name="Level 2" type="Spatial"]
+script = ExtResource( 16 )
 
 [node name="Flooring" type="Spatial" parent="."]
 
