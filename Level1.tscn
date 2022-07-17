@@ -556,8 +556,6 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.27
 
 [node name="D4" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 0, 1.4, -9 )
-collision_layer = 23
-collision_mask = 23
 linear_damp = 2.0
 angular_damp = 2.0
 
@@ -633,5 +631,10 @@ collision_mask = 16
 
 [node name="CollisionShape" type="CollisionShape" parent="DiceZoneL1/ChaoDado"]
 shape = SubResource( 25 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.889049, -0.301916, 0.344149, -0.457812, -0.586307, 0.66832, 0, -0.751725, -0.659477, 0, 31.7502, 0 )
+light_energy = 0.699
+shadow_enabled = true
 
 [connection signal="body_entered" from="FinishingArea" to="." method="_on_FinishingArea_body_entered"]
