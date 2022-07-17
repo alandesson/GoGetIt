@@ -1,0 +1,656 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://Obstáculos/Sweeper.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Camera_Pivot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://PlayerModel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Dados/D4.tscn" type="PackedScene" id=4]
+[ext_resource path="res://EngineForce.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/Rotator.gd" type="Script" id=6]
+[ext_resource path="res://FinishingArea.tscn" type="PackedScene" id=7]
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 10, 1, 35 )
+
+[sub_resource type="CubeMesh" id=1]
+size = Vector3( 20, 2, 70 )
+
+[sub_resource type="BoxShape" id=11]
+extents = Vector3( 25, 1, 25 )
+
+[sub_resource type="CubeMesh" id=12]
+size = Vector3( 50, 2, 50 )
+
+[sub_resource type="CylinderMesh" id=3]
+top_radius = 5.0
+bottom_radius = 5.0
+height = 1.0
+
+[sub_resource type="BoxShape" id=9]
+extents = Vector3( 10, 0.5, 0.5 )
+
+[sub_resource type="CubeMesh" id=10]
+size = Vector3( 20, 1, 1 )
+
+[sub_resource type="CubeMesh" id=18]
+size = Vector3( 6, 2, 10 )
+
+[sub_resource type="BoxShape" id=19]
+extents = Vector3( 3, 1, 5 )
+
+[sub_resource type="CylinderMesh" id=20]
+top_radius = 6.0
+bottom_radius = 6.0
+
+[sub_resource type="CylinderShape" id=21]
+radius = 6.0
+
+[sub_resource type="CubeMesh" id=4]
+size = Vector3( 5, 4, 6 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 2.5, 2, 3 )
+
+[sub_resource type="Curve3D" id=6]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 0, 0, 0.302414, 0, 0, 0, 0, 0, 0, 0, 0, 13.3024, 0, 0, 0, 0, 0, 0, 0, 2, 13.3024, 0, 0, 0, 0, 0, 0, 0, 0, 13.3024, 0, 0, 0, 0, 0, 0, 0, 2, 13.3024, 0, 0, 0, 0, 0, 0, 0, 0, 13.3024, 0, 0, 0, 0, 0, 0, 0, 0, 0.302414, 0, 0, 0, 0, 0, 0, 0, 0, 0.302414 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 )
+}
+
+[sub_resource type="CylinderMesh" id=13]
+top_radius = 5.0
+bottom_radius = 5.0
+
+[sub_resource type="CylinderShape" id=14]
+radius = 5.0
+
+[sub_resource type="Curve3D" id=15]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3.8147e-06, 0, 35, 0, 0, 0, 0, 0, 0, -28, 0, 0, 0, 0, 0, 0, 0, 0, -28, 0, 34, 0, 0, 0, 0, 0, 0, 0, 0, 0 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0 )
+}
+
+[sub_resource type="CubeMesh" id=16]
+size = Vector3( 50, 2, 2 )
+
+[sub_resource type="BoxShape" id=17]
+extents = Vector3( 25, 1, 1 )
+
+[sub_resource type="Theme" id=7]
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.458824, 0.878431, 0.423529, 1 )
+
+[node name="Level 2" type="Spatial"]
+
+[node name="Flooring" type="Spatial" parent="."]
+
+[node name="StaticBody" type="StaticBody" parent="Flooring"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 27.046 )
+collision_layer = 9
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="Flooring/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Flooring/StaticBody"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody3" type="StaticBody" parent="Flooring"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 162.046 )
+collision_layer = 9
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="Flooring/StaticBody3"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Flooring/StaticBody3"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody4" type="StaticBody" parent="Flooring"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 211.046 )
+collision_layer = 9
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="Flooring/StaticBody4"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Flooring/StaticBody4"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody2" type="StaticBody" parent="Flooring"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 102.046 )
+collision_layer = 9
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="Flooring/StaticBody2"]
+shape = SubResource( 11 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Flooring/StaticBody2"]
+mesh = SubResource( 12 )
+material/0 = null
+
+[node name="MeshInstance" type="MeshInstance" parent="Flooring"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -10, 1, 8 )
+mesh = SubResource( 3 )
+skeleton = NodePath("")
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Flooring"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -10, 1, 34 )
+mesh = SubResource( 3 )
+skeleton = NodePath("")
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Flooring"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 10, 1, 23 )
+mesh = SubResource( 3 )
+skeleton = NodePath("")
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Flooring"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 10, 1, 40 )
+mesh = SubResource( 3 )
+skeleton = NodePath("")
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Flooring"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -10, 1, 53 )
+mesh = SubResource( 3 )
+skeleton = NodePath("")
+material/0 = null
+
+[node name="Stairs" type="Spatial" parent="Flooring"]
+
+[node name="StaticBody2" type="StaticBody" parent="Flooring/Stairs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.744386, 62.046 )
+collision_layer = 9
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="Flooring/Stairs/StaticBody2"]
+shape = SubResource( 9 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Flooring/Stairs/StaticBody2"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="StaticBody3" type="StaticBody" parent="Flooring/Stairs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.994386, 63.046 )
+collision_layer = 9
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="Flooring/Stairs/StaticBody3"]
+shape = SubResource( 9 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Flooring/Stairs/StaticBody3"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="StaticBody4" type="StaticBody" parent="Flooring/Stairs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24439, 64.046 )
+collision_layer = 9
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="Flooring/Stairs/StaticBody4"]
+shape = SubResource( 9 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Flooring/Stairs/StaticBody4"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="StaticBody5" type="StaticBody" parent="Flooring/Stairs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49439, 65.046 )
+collision_layer = 9
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="Flooring/Stairs/StaticBody5"]
+shape = SubResource( 9 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Flooring/Stairs/StaticBody5"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="StaticBody6" type="StaticBody" parent="Flooring/Stairs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.74439, 66.046 )
+collision_layer = 9
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="Flooring/Stairs/StaticBody6"]
+shape = SubResource( 9 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Flooring/Stairs/StaticBody6"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="StaticBody8" type="StaticBody" parent="Flooring/Stairs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.99439, 67.046 )
+collision_layer = 9
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="Flooring/Stairs/StaticBody8"]
+shape = SubResource( 9 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Flooring/Stairs/StaticBody8"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="StaticBody9" type="StaticBody" parent="Flooring/Stairs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.24439, 68.046 )
+collision_layer = 9
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="Flooring/Stairs/StaticBody9"]
+shape = SubResource( 9 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Flooring/Stairs/StaticBody9"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="StaticBody10" type="StaticBody" parent="Flooring/Stairs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.49439, 69.046 )
+collision_layer = 9
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="Flooring/Stairs/StaticBody10"]
+shape = SubResource( 9 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Flooring/Stairs/StaticBody10"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="StaticBody11" type="StaticBody" parent="Flooring/Stairs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.74439, 70.046 )
+collision_layer = 9
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="Flooring/Stairs/StaticBody11"]
+shape = SubResource( 9 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Flooring/Stairs/StaticBody11"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="StaticBody12" type="StaticBody" parent="Flooring/Stairs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.99439, 71.046 )
+collision_layer = 9
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="Flooring/Stairs/StaticBody12"]
+shape = SubResource( 9 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Flooring/Stairs/StaticBody12"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="StaticBody13" type="StaticBody" parent="Flooring/Stairs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.24439, 72.046 )
+collision_layer = 9
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="Flooring/Stairs/StaticBody13"]
+shape = SubResource( 9 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Flooring/Stairs/StaticBody13"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="StaticBody14" type="StaticBody" parent="Flooring/Stairs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.49439, 73.046 )
+collision_layer = 9
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="Flooring/Stairs/StaticBody14"]
+shape = SubResource( 9 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Flooring/Stairs/StaticBody14"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="StaticBody15" type="StaticBody" parent="Flooring/Stairs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.74439, 74.046 )
+collision_layer = 9
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="Flooring/Stairs/StaticBody15"]
+shape = SubResource( 9 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Flooring/Stairs/StaticBody15"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="StaticBody16" type="StaticBody" parent="Flooring/Stairs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.99439, 75.046 )
+collision_layer = 9
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="Flooring/Stairs/StaticBody16"]
+shape = SubResource( 9 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Flooring/Stairs/StaticBody16"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="StaticBody17" type="StaticBody" parent="Flooring/Stairs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.24439, 76.046 )
+collision_layer = 9
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="Flooring/Stairs/StaticBody17"]
+shape = SubResource( 9 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Flooring/Stairs/StaticBody17"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="StaticBody18" type="StaticBody" parent="Flooring/Stairs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 77.046 )
+collision_layer = 9
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="Flooring/Stairs/StaticBody18"]
+shape = SubResource( 9 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Flooring/Stairs/StaticBody18"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="StaticBody28" type="StaticBody" parent="Flooring"]
+transform = Transform( 1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, 1, -0.670004, 4, 250.005 )
+collision_layer = 9
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Flooring/StaticBody28"]
+mesh = SubResource( 18 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Flooring/StaticBody28"]
+shape = SubResource( 19 )
+
+[node name="StaticBody29" type="StaticBody" parent="Flooring"]
+transform = Transform( 1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, 1, -0.670002, 4, 260.005 )
+collision_layer = 9
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Flooring/StaticBody29"]
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Flooring/StaticBody29"]
+shape = SubResource( 21 )
+
+[node name="Obstacles" type="Spatial" parent="."]
+
+[node name="Sweeper" parent="Obstacles" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16.3024, 3, 8 )
+wait_on = [ 0 ]
+
+[node name="MeshInstance" parent="Obstacles/Sweeper" index="0"]
+mesh = SubResource( 4 )
+
+[node name="CollisionShape" parent="Obstacles/Sweeper" index="1"]
+shape = SubResource( 5 )
+
+[node name="Path" parent="Obstacles/Sweeper" index="2"]
+curve = SubResource( 6 )
+
+[node name="Sweeper2" parent="Obstacles" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.3024, 3, 34 )
+wait_on = [ 0 ]
+
+[node name="MeshInstance" parent="Obstacles/Sweeper2" index="0"]
+mesh = SubResource( 4 )
+
+[node name="CollisionShape" parent="Obstacles/Sweeper2" index="1"]
+shape = SubResource( 5 )
+
+[node name="Path" parent="Obstacles/Sweeper2" index="2"]
+curve = SubResource( 6 )
+
+[node name="Waiter" parent="Obstacles/Sweeper2" index="3"]
+wait_time = 1.5
+
+[node name="Sweeper3" parent="Obstacles" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15.3024, 3, 53 )
+wait_on = [ 0 ]
+
+[node name="MeshInstance" parent="Obstacles/Sweeper3" index="0"]
+mesh = SubResource( 4 )
+
+[node name="CollisionShape" parent="Obstacles/Sweeper3" index="1"]
+shape = SubResource( 5 )
+
+[node name="Path" parent="Obstacles/Sweeper3" index="2"]
+curve = SubResource( 6 )
+
+[node name="Waiter" parent="Obstacles/Sweeper3" index="3"]
+wait_time = 1.7
+
+[node name="Sweeper4" parent="Obstacles" instance=ExtResource( 1 )]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 13.6976, 3, 40 )
+wait_on = [ 0 ]
+
+[node name="MeshInstance" parent="Obstacles/Sweeper4" index="0"]
+mesh = SubResource( 4 )
+
+[node name="CollisionShape" parent="Obstacles/Sweeper4" index="1"]
+shape = SubResource( 5 )
+
+[node name="Path" parent="Obstacles/Sweeper4" index="2"]
+curve = SubResource( 6 )
+
+[node name="Waiter" parent="Obstacles/Sweeper4" index="3"]
+wait_time = 3.0
+
+[node name="Sweeper5" parent="Obstacles" instance=ExtResource( 1 )]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 14.6976, 3, 23 )
+wait_on = [ 0 ]
+
+[node name="MeshInstance" parent="Obstacles/Sweeper5" index="0"]
+mesh = SubResource( 4 )
+
+[node name="CollisionShape" parent="Obstacles/Sweeper5" index="1"]
+shape = SubResource( 5 )
+
+[node name="Path" parent="Obstacles/Sweeper5" index="2"]
+curve = SubResource( 6 )
+
+[node name="Waiter" parent="Obstacles/Sweeper5" index="3"]
+wait_time = 1.2
+
+[node name="Sweeper6" parent="Obstacles" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 6, 85 )
+wait_on = [  ]
+
+[node name="MeshInstance" parent="Obstacles/Sweeper6" index="0"]
+mesh = SubResource( 13 )
+
+[node name="CollisionShape" parent="Obstacles/Sweeper6" index="1"]
+shape = SubResource( 14 )
+
+[node name="Path" parent="Obstacles/Sweeper6" index="2"]
+curve = SubResource( 15 )
+
+[node name="Sweeper7" parent="Obstacles" instance=ExtResource( 1 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -19, 6, 120 )
+wait_on = [  ]
+
+[node name="MeshInstance" parent="Obstacles/Sweeper7" index="0"]
+mesh = SubResource( 13 )
+
+[node name="CollisionShape" parent="Obstacles/Sweeper7" index="1"]
+shape = SubResource( 14 )
+
+[node name="Path" parent="Obstacles/Sweeper7" index="2"]
+curve = SubResource( 15 )
+
+[node name="Rotator" type="KinematicBody" parent="Obstacles"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 7, 153 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 6 )
+rot_speed = 50
+rot_dir = -1
+max_angle = 190
+
+[node name="MeshInstance" type="MeshInstance" parent="Obstacles/Rotator"]
+mesh = SubResource( 16 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Obstacles/Rotator"]
+shape = SubResource( 17 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Obstacles/Rotator"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
+mesh = SubResource( 16 )
+material/0 = null
+
+[node name="CollisionShape2" type="CollisionShape" parent="Obstacles/Rotator"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 17 )
+
+[node name="Rotator3" type="KinematicBody" parent="Obstacles"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 7, 207 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 6 )
+rot_speed = 50
+rot_dir = -1
+max_angle = 190
+
+[node name="MeshInstance" type="MeshInstance" parent="Obstacles/Rotator3"]
+mesh = SubResource( 16 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Obstacles/Rotator3"]
+shape = SubResource( 17 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Obstacles/Rotator3"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
+mesh = SubResource( 16 )
+material/0 = null
+
+[node name="CollisionShape2" type="CollisionShape" parent="Obstacles/Rotator3"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 17 )
+
+[node name="Rotator2" type="KinematicBody" parent="Obstacles"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 7, 180 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 6 )
+rot_speed = 50
+max_angle = 190
+
+[node name="MeshInstance" type="MeshInstance" parent="Obstacles/Rotator2"]
+mesh = SubResource( 16 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Obstacles/Rotator2"]
+shape = SubResource( 17 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Obstacles/Rotator2"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
+mesh = SubResource( 16 )
+material/0 = null
+
+[node name="CollisionShape2" type="CollisionShape" parent="Obstacles/Rotator2"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 17 )
+
+[node name="Camera_Pivot" parent="." instance=ExtResource( 2 )]
+target_path = NodePath("../Player2")
+
+[node name="Player2" parent="." instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2.2782, -2 )
+
+[node name="D4" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -0.0686042, 5.02367, 0.829004 )
+
+[node name="UI" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ProgressBar" type="ProgressBar" parent="UI"]
+margin_left = 71.0
+margin_top = 554.0
+margin_right = 208.0
+margin_bottom = 639.0
+rect_rotation = -89.9231
+rect_scale = Vector2( 1.08113, 0.401273 )
+theme = SubResource( 7 )
+custom_styles/fg = SubResource( 8 )
+max_value = 200.0
+percent_visible = false
+script = ExtResource( 5 )
+
+[node name="CongratulationsPanel" type="PanelContainer" parent="UI"]
+visible = false
+margin_left = 321.0
+margin_top = 222.0
+margin_right = 709.0
+margin_bottom = 351.0
+
+[node name="Label" type="Label" parent="UI/CongratulationsPanel"]
+margin_left = 7.0
+margin_top = 57.0
+margin_right = 381.0
+margin_bottom = 71.0
+text = "Congratulations, You Got It."
+align = 1
+
+[node name="FinishingArea" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -0.6308, 5.29351, 260.159 )
+
+[editable path="Obstacles/Sweeper"]
+[editable path="Obstacles/Sweeper2"]
+[editable path="Obstacles/Sweeper3"]
+[editable path="Obstacles/Sweeper4"]
+[editable path="Obstacles/Sweeper5"]
+[editable path="Obstacles/Sweeper6"]
+[editable path="Obstacles/Sweeper7"]

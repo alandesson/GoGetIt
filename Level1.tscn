@@ -59,6 +59,7 @@ script = ExtResource( 6 )
 
 [node name="StaticBody" type="StaticBody" parent="Flooring"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0111711, 0, 0.000427723 )
+collision_layer = 9
 __meta__ = {
 "_edit_group_": true
 }
@@ -72,6 +73,7 @@ shape = SubResource( 2 )
 
 [node name="StaticBody2" type="StaticBody" parent="Flooring"]
 transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 2.10992, 0, 7.98123 )
+collision_layer = 9
 __meta__ = {
 "_edit_group_": true
 }
@@ -85,6 +87,7 @@ shape = SubResource( 2 )
 
 [node name="StaticBody3" type="StaticBody" parent="Flooring"]
 transform = Transform( -0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 13.5933, 0, 19.4695 )
+collision_layer = 9
 __meta__ = {
 "_edit_group_": true
 }
@@ -98,6 +101,7 @@ shape = SubResource( 2 )
 
 [node name="StaticBody4" type="StaticBody" parent="Flooring"]
 transform = Transform( -0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 7.84003, 0, 13.7226 )
+collision_layer = 9
 __meta__ = {
 "_edit_group_": true
 }
@@ -111,6 +115,7 @@ shape = SubResource( 2 )
 
 [node name="StaticBody5" type="StaticBody" parent="Flooring"]
 transform = Transform( -0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 13.5216, -0.00502038, 35.2887 )
+collision_layer = 9
 __meta__ = {
 "_edit_group_": true
 }
@@ -124,6 +129,7 @@ shape = SubResource( 2 )
 
 [node name="StaticBody6" type="StaticBody" parent="Flooring"]
 transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, -1, 15.6944, -0.00502038, 27.3278 )
+collision_layer = 9
 __meta__ = {
 "_edit_group_": true
 }
@@ -137,6 +143,7 @@ shape = SubResource( 2 )
 
 [node name="StaticBody7" type="StaticBody" parent="Flooring"]
 transform = Transform( 0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 7.78039, -0.00502038, 40.98 )
+collision_layer = 9
 __meta__ = {
 "_edit_group_": true
 }
@@ -150,6 +157,7 @@ shape = SubResource( 2 )
 
 [node name="StaticBody8" type="StaticBody" parent="Flooring"]
 transform = Transform( 0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 1.91818, 0, 46.788 )
+collision_layer = 9
 __meta__ = {
 "_edit_group_": true
 }
@@ -163,6 +171,7 @@ shape = SubResource( 2 )
 
 [node name="StaticBody9" type="StaticBody" parent="Flooring"]
 transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, -1, -0.188962, 0, 54.6211 )
+collision_layer = 9
 __meta__ = {
 "_edit_group_": true
 }
@@ -176,6 +185,7 @@ shape = SubResource( 2 )
 
 [node name="StaticBody21" type="StaticBody" parent="Flooring"]
 transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, -1, -0.188962, 5.1, 83.8049 )
+collision_layer = 9
 __meta__ = {
 "_edit_group_": true
 }
@@ -189,6 +199,7 @@ shape = SubResource( 2 )
 
 [node name="StaticBody10" type="StaticBody" parent="Flooring"]
 transform = Transform( -1, 0, 0, 0, 0.965926, -0.258819, 0, -0.258819, -0.965926, -0.188962, 2.59006, 69.3774 )
+collision_layer = 9
 __meta__ = {
 "_edit_group_": true
 }
@@ -202,6 +213,7 @@ shape = SubResource( 4 )
 
 [node name="StaticBody11" type="StaticBody" parent="Flooring"]
 transform = Transform( -0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 13.5933, -0.00502038, 19.4695 )
+collision_layer = 9
 __meta__ = {
 "_edit_group_": true
 }
@@ -215,6 +227,7 @@ shape = SubResource( 2 )
 
 [node name="StaticBody12" type="StaticBody" parent="Flooring"]
 transform = Transform( -0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 7.84003, -0.00502038, 13.7226 )
+collision_layer = 9
 __meta__ = {
 "_edit_group_": true
 }
@@ -228,6 +241,7 @@ shape = SubResource( 2 )
 
 [node name="StaticBody13" type="StaticBody" parent="Flooring"]
 transform = Transform( -0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 13.5216, 0, 35.2887 )
+collision_layer = 9
 __meta__ = {
 "_edit_group_": true
 }
@@ -241,6 +255,7 @@ shape = SubResource( 2 )
 
 [node name="StaticBody14" type="StaticBody" parent="Flooring"]
 transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, -1, 15.6944, 0, 27.3278 )
+collision_layer = 9
 __meta__ = {
 "_edit_group_": true
 }
@@ -254,6 +269,7 @@ shape = SubResource( 2 )
 
 [node name="StaticBody15" type="StaticBody" parent="Flooring"]
 transform = Transform( 0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 7.78039, 0, 40.98 )
+collision_layer = 9
 __meta__ = {
 "_edit_group_": true
 }
@@ -267,6 +283,7 @@ shape = SubResource( 2 )
 
 [node name="StaticBody16" type="StaticBody" parent="Flooring"]
 transform = Transform( -0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, -8.05252, 5.1, 97.3911 )
+collision_layer = 9
 __meta__ = {
 "_edit_group_": true
 }
@@ -280,6 +297,7 @@ shape = SubResource( 2 )
 
 [node name="StaticBody17" type="StaticBody" parent="Flooring"]
 transform = Transform( -0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, -2.30563, 5.1, 91.6378 )
+collision_layer = 9
 __meta__ = {
 "_edit_group_": true
 }
@@ -293,6 +311,7 @@ shape = SubResource( 2 )
 
 [node name="StaticBody18" type="StaticBody" parent="Flooring"]
 transform = Transform( 0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -23.8717, 5.1, 97.3194 )
+collision_layer = 9
 __meta__ = {
 "_edit_group_": true
 }
@@ -306,6 +325,7 @@ shape = SubResource( 2 )
 
 [node name="StaticBody19" type="StaticBody" parent="Flooring"]
 transform = Transform( 4.37114e-08, 0, 1, 0, 1, 0, -1, 0, 4.37114e-08, -15.9108, 5.1, 99.4922 )
+collision_layer = 9
 __meta__ = {
 "_edit_group_": true
 }
@@ -319,6 +339,7 @@ shape = SubResource( 2 )
 
 [node name="StaticBody20" type="StaticBody" parent="Flooring"]
 transform = Transform( -0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -29.563, 5.1, 91.5782 )
+collision_layer = 9
 __meta__ = {
 "_edit_group_": true
 }
@@ -332,6 +353,7 @@ shape = SubResource( 2 )
 
 [node name="StaticBody22" type="StaticBody" parent="Flooring"]
 transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, -1, -31.67, 5.1, 68.7405 )
+collision_layer = 9
 __meta__ = {
 "_edit_group_": true
 }
@@ -345,6 +367,7 @@ shape = SubResource( 6 )
 
 [node name="StaticBody23" type="StaticBody" parent="Flooring"]
 transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, -1, -31.67, 5.1, 83.7405 )
+collision_layer = 9
 __meta__ = {
 "_edit_group_": true
 }
@@ -358,6 +381,7 @@ shape = SubResource( 2 )
 
 [node name="StaticBody28" type="StaticBody" parent="Flooring"]
 transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, -1, -31.67, 5.1, 53.7405 )
+collision_layer = 9
 __meta__ = {
 "_edit_group_": true
 }
@@ -371,6 +395,7 @@ shape = SubResource( 2 )
 
 [node name="StaticBody29" type="StaticBody" parent="Flooring"]
 transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, -1, -31.67, 5.1, 43.7405 )
+collision_layer = 9
 __meta__ = {
 "_edit_group_": true
 }
@@ -384,6 +409,7 @@ shape = SubResource( 11 )
 
 [node name="StaticBody24" type="StaticBody" parent="Flooring"]
 transform = Transform( -3.78552e-08, 0.866025, 0.5, -1, -4.37114e-08, 0, 2.18557e-08, -0.5, 0.866025, -31.6929, 5.82117, 74.3807 )
+collision_layer = 9
 __meta__ = {
 "_edit_group_": true
 }
@@ -398,6 +424,7 @@ shape = SubResource( 8 )
 
 [node name="StaticBody26" type="StaticBody" parent="Flooring"]
 transform = Transform( -2.18557e-08, 0.5, 0.866025, -1, -4.37114e-08, 0, 3.78552e-08, -0.866025, 0.5, -31.6929, 5.9269, 69.3935 )
+collision_layer = 9
 __meta__ = {
 "_edit_group_": true
 }
@@ -412,6 +439,7 @@ shape = SubResource( 8 )
 
 [node name="StaticBody25" type="StaticBody" parent="Flooring"]
 transform = Transform( -4.2222e-08, 0.965926, -0.258819, -1, -4.37114e-08, 0, -1.13133e-08, 0.258819, 0.965926, -31.6929, 5.95406, 71.5839 )
+collision_layer = 9
 __meta__ = {
 "_edit_group_": true
 }
@@ -426,6 +454,7 @@ shape = SubResource( 8 )
 
 [node name="StaticBody27" type="StaticBody" parent="Flooring"]
 transform = Transform( -4.2222e-08, 0.965926, 0.258819, -1, -4.37114e-08, 0, 1.13133e-08, -0.258819, 0.965926, -31.6929, 5.96209, 64.5839 )
+collision_layer = 9
 __meta__ = {
 "_edit_group_": true
 }
