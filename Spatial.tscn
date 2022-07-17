@@ -30,7 +30,7 @@ bg_color = Color( 0.458824, 0.878431, 0.423529, 1 )
 script = ExtResource( 7 )
 
 [node name="StaticBody" type="StaticBody" parent="."]
-collision_layer = 9
+collision_layer = 13
 
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
 shape = SubResource( 1 )
