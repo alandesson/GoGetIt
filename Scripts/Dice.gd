@@ -1,12 +1,14 @@
 extends RigidBody
 
 var numberFaces
+var vectorUPglobal
 
 func _ready():
 	numberFaces = name.trim_prefix("D").to_int()
 	Awake(numberFaces)
 	print(numberFaces)
-	pass
+	vectorUPglobal = (Vector3.UP) if numberFaces != 4 else (Vector3.DOWN)
+	
 
 var direction = []
 var values = []
@@ -23,13 +25,12 @@ func Awake(numberFaces):
 	if numberFaces==20:
 		loadValuesD20()
 
-var vectorUPglobal = (Vector3.UP) if numberFaces != 4 else (Vector3.DOWN)
 
 func getNumber(numberFaces):
 	var minDifference = 180.0
 	var mostSimilarDirectionIndex = -1
 	for i in range(0,direction.size()):
-		var a = rad2deg(vectorUPglobal.angle_to(to_global(direction[i])-translation))
+		var a = vectorUPglobal.angle_to(to_global(direction[i])-translation)
 		# print(a)
 		if a <= minDifference :
 			minDifference = a
@@ -66,14 +67,14 @@ func loadValuesD6():
 		values.append(6); 
  
 		direction.append(Vector3.LEFT);
-		values.append(2); 
+		values.append(3); 
 		direction.append(Vector3.RIGHT);
-		values.append(5);
+		values.append(4);
  
 		direction.append(Vector3.FORWARD);
-		values.append(4); 
+		values.append(5); 
 		direction.append(Vector3.BACK);
-		values.append(3);
+		values.append(2);
 
 func loadValuesD8():
 	if direction.size() == 0:
