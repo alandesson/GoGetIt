@@ -15,7 +15,7 @@ func _ready():
 var velocity;
 
 func _process(delta):
-	velocity = get_node("../../Player").linear_velocity;
+	velocity = get_node("../../Player2").linear_velocity;
 	velocity.y = 0;
 	self.value = velocity.length_squared();
 	

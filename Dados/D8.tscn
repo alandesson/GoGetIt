@@ -18,8 +18,9 @@ surfaces/0 = {
 points = PoolVector3Array( 0, 1, 0, 1, 0, 0, 0, 0, -1, -1, 0, 0, 0, 0, 1, 0, -1, 0 )
 
 [node name="D8" type="RigidBody" groups=["Dice"]]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 7
+collision_mask = 7
+gravity_scale = 2.0
 
 [node name="Mesh" type="MeshInstance" parent="."]
 mesh = SubResource( 1 )
