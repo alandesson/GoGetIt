@@ -267,7 +267,3 @@ shape = SubResource( 17 )
 [node name="Tras" type="CollisionShape" parent="Robot/BracoManual/braco/Pazinha"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0178972, 0.102129, -0.885504 )
 shape = SubResource( 18 )
-
-[node name="Tras2" type="CollisionShape" parent="Robot/BracoManual/braco/Pazinha"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0178972, 0.102129, -2.79171 )
-shape = SubResource( 18 )
