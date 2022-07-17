@@ -10,7 +10,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _process(delta):
-	translation = target.translation
+	translation = target.translation + Vector3.UP
 
 func _input(event):
 	if event is InputEventMouseMotion:

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Forgoten_tombs.mp3-ca12ccbf70bb29ce0b61f53431b2d07b.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Forgoten_tombs.mp3"
+dest_files=[ "res://.import/Forgoten_tombs.mp3-ca12ccbf70bb29ce0b61f53431b2d07b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

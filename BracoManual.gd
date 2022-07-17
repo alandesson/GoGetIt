@@ -8,7 +8,7 @@ var elevacao = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$braco.add_collision_exception_with($bod)
+#	$braco.add_collision_exception_with($bod)
 	$braco/Pazinha.add_collision_exception_with($braco)
 	
 func rotate_braco(angle):
