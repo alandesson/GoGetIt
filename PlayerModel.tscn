@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://BracoManual.gd" type="Script" id=2]
@@ -24,6 +24,9 @@ surfaces/0 = {
 "skeleton_aabb": [  ],
 "vertex_count": 120
 }
+
+[sub_resource type="SpatialMaterial" id=19]
+albedo_color = Color( 0.109804, 0.109804, 0.109804, 1 )
 
 [sub_resource type="ArrayMesh" id=3]
 resource_name = "Robot_Cylinder006"
@@ -71,7 +74,10 @@ surfaces/0 = {
 }
 
 [sub_resource type="SpatialMaterial" id=6]
-albedo_color = Color( 0.529412, 0.117647, 0.658824, 1 )
+albedo_color = Color( 0.686275, 0.721569, 0.760784, 1 )
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.15
 
 [sub_resource type="ArrayMesh" id=7]
 resource_name = "Robot_Cylinder014"
@@ -87,6 +93,18 @@ surfaces/0 = {
 "skeleton_aabb": [  ],
 "vertex_count": 1296
 }
+
+[sub_resource type="SpatialMaterial" id=20]
+albedo_color = Color( 1, 0.890196, 0, 1 )
+roughness = 0.19
+emission_enabled = true
+emission = Color( 0.87451, 0.72549, 0.270588, 1 )
+emission_energy = 1.72
+emission_operator = 0
+emission_on_uv2 = false
+rim_enabled = true
+rim = 1.0
+rim_tint = 0.5
 
 [sub_resource type="ArrayMesh" id=8]
 resource_name = "Robot_Cube020"
@@ -105,6 +123,8 @@ surfaces/0 = {
 
 [sub_resource type="SpatialMaterial" id=9]
 albedo_color = Color( 0.454902, 0.113725, 0.113725, 1 )
+metallic = 1.0
+roughness = 0.0
 
 [sub_resource type="ConvexPolygonShape" id=16]
 points = PoolVector3Array( 1.17779, 0.193718, 0.0441498, -1.23462, -0.2134, -1.27112, 1.23487, -0.2134, -1.27112, -1.18799, 0.22523, -1.2134, -1.17757, -0.174281, 0.0882994, 1.23487, 0.20335, -1.27112, 1.19194, -0.230349, -0.108518, -1.21129, 0.224001, -0.10159, 1.20976, 0.0477989, 0.195887, -1.20098, 0.0925415, 0.175671, -1.2231, -0.236284, -0.261591, 1.21153, 0.224001, -0.10159, 1.19867, -0.11739, 0.159239, 1.18388, -0.234438, -1.19601, -1.23462, 0.20335, -1.27112, -1.20794, -0.0427472, 0.194949, 1.26498, 0.0626516, 0.0571961, -1.26372, 0.0475196, 0.0715999, 1.18823, 0.22523, -1.2134, -1.18364, -0.234438, -1.19601, -1.19344, 0.166512, 0.111498, 1.01882, 0.156971, 0.149158, 1.22334, -0.236284, -0.261591, 1.19162, -0.191184, 0.0508915, -1.1917, -0.230349, -0.108518, -1.19842, -0.11739, 0.159239, 1.20819, -0.0427472, 0.194949, -1.17755, 0.193718, 0.0441498, -1.20951, 0.0477989, 0.195887, 1.2298, -0.192447, -0.00520721, -1.2298, -0.192485, -0.0051018, -1.20359, 0.225317, -0.76762, -1.19138, -0.191184, 0.0508915, 1.17781, -0.174281, 0.0882994, -1.2298, 0.182435, -0.0051018, 1.19368, 0.166512, 0.111498, -1.2048, -0.0878161, 0.177916, 1.20359, 0.225317, -0.76762, -1.19766, 0.122219, 0.158799, 1.2298, 0.182397, -0.00520721, 1.20505, -0.0878161, 0.177916, 1.1979, 0.122219, 0.158799, 1.2455, -0.0569022, 0.0629235 )
@@ -126,6 +146,8 @@ surfaces/0 = {
 
 [sub_resource type="SpatialMaterial" id=11]
 albedo_color = Color( 0.0901961, 0.101961, 0.247059, 1 )
+metallic = 1.0
+roughness = 0.0
 
 [sub_resource type="ArrayMesh" id=12]
 resource_name = "Robot_Cube016"
@@ -144,6 +166,8 @@ surfaces/0 = {
 
 [sub_resource type="SpatialMaterial" id=13]
 albedo_color = Color( 0.486275, 0.443137, 0.498039, 1 )
+metallic = 1.0
+roughness = 0.0
 
 [sub_resource type="ConvexPolygonShape" id=14]
 points = PoolVector3Array( -0.827897, -2.99169, -1.24396, 0.962051, 2.28443, 0.141, 0.948843, 2.24827, -0.104629, -0.965, 2.25052, 0.124189, -0.941936, -0.170889, -2.44321, 0.842291, -2.94329, -0.0342606, 0.95562, -1.35668, -2.4826, -0.965, -1.35039, 0.124189, 0.943865, 1.6, -1.19779, -0.965, -1.35058, -2.47452, -0.840888, -3.0326, -0.0871226, 0.842119, -2.94332, -1.24268, -0.848005, 1.52014, -1.33788, 0.879323, 0.119714, -2.31887, 0.962051, -1.36306, 0.141, -0.848005, 1.8939, -0.825632, 0.9266, -0.170889, -2.44321, -0.964179, 2.24827, -0.104629, -0.819307, -2.96365, -0.0252287, -0.959201, 1.6, -1.19779, -0.822106, -1.3887, -2.46493, 0.841957, -2.62913, -1.51022, 0.964431, -1.3655, -0.0871844, -0.819708, -1.65616, 0.110767, 0.842007, -2.85285, -1.33103 )
@@ -182,7 +206,7 @@ damping_relaxation = 2.0
 transform = Transform( 1.89558e-07, 0.238196, 0, -0.530043, 8.51854e-08, 0, 0, 0, 0.530043, 0, 0, -2.98023e-08 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../../Robot")
-material/0 = null
+material/0 = SubResource( 19 )
 
 [node name="RightWheel" type="VehicleWheel" parent="."]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.64, 0.109, -0.265 )
@@ -197,13 +221,13 @@ damping_relaxation = 2.0
 transform = Transform( 1.89558e-07, 0.238196, 0, -0.530043, 8.51854e-08, 0, 0, 0, 0.530043, 0.000167012, -0.000360489, -0.000323921 )
 mesh = SubResource( 3 )
 skeleton = NodePath("../../Robot")
-material/0 = null
+material/0 = SubResource( 19 )
 
 [node name="BackWheelMesh" type="MeshInstance" parent="."]
 transform = Transform( 1.82507e-07, 0.229335, 0, -0.510326, 8.20166e-08, 0, 0, 0, 0.510326, 0.014595, 0.0554264, 1.14864 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../Robot")
-material/0 = null
+material/0 = SubResource( 19 )
 
 [node name="Robot" type="MeshInstance" parent="."]
 mesh = SubResource( 5 )
@@ -213,7 +237,7 @@ material/0 = SubResource( 6 )
 [node name="Eyes" type="MeshInstance" parent="Robot"]
 transform = Transform( 0.154828, 0, 0, 0, 0.00913988, 0.153459, 0, -0.0682576, 0.0205485, -0.536236, 2.57061, -0.988416 )
 mesh = SubResource( 7 )
-material/0 = null
+material/0 = SubResource( 20 )
 
 [node name="BracoManual" type="Spatial" parent="Robot"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.96, 0 )
@@ -245,7 +269,7 @@ skeleton = NodePath("../../Braco")
 material/0 = SubResource( 11 )
 
 [node name="Pá" type="MeshInstance" parent="Robot/BracoManual/braco/Pazinha/Antebraco"]
-transform = Transform( 1.02816, 0, 0, 0, 0.0503747, -0.00657177, 0, 0.000424302, 0.780224, 0, 0.00397532, -0.843816 )
+transform = Transform( 1.02816, 0, 0, 0, 0.0503747, -0.00657177, 0, 0.000424302, 0.780224, 0, 0.00397539, -0.843816 )
 mesh = SubResource( 12 )
 material/0 = SubResource( 13 )
 
