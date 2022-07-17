@@ -14,9 +14,13 @@ var direction = Vector2.ONE;
 
 func movement(delta):
 	if(Input.get_axis("right", "left") > .5):
-		direction = ROTATION_SPEED * Vector2(-1,1);
-	elif(Input.get_axis("right", "left") < -.5):
 		direction = ROTATION_SPEED * Vector2(1,-1);
+		if force == 0:
+			add_torque(Vector3(0,10000,0))
+	elif(Input.get_axis("right", "left") < -.5):
+		direction = ROTATION_SPEED * Vector2(-1,1);
+		if force == 0:
+			add_torque(Vector3(0,-10000,0))
 	else:
 		direction = Vector2.ONE;
 		

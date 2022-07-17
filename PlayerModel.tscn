@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://BracoManual.gd" type="Script" id=2]
@@ -150,8 +150,16 @@ points = PoolVector3Array( -0.827897, -2.99169, -1.24396, 0.962051, 2.28443, 0.1
 [sub_resource type="ConvexPolygonShape" id=15]
 points = PoolVector3Array( -1.14517, -0.148205, -0.917951, -1.22574, 0.207081, -0.0825762, 1.17152, -0.178181, 0.0840166, -1.17152, -0.178181, 0.0840166, 1.1697, 0.161676, 0.108286, -1.18289, 0.136579, -0.93581, 1.14517, -0.148205, -0.917951, 1.18289, 0.136579, -0.93581, -1.18471, 0.0364479, 0.19119, 1.22574, -0.223321, -0.0954155, 1.22574, 0.207081, -0.0825762, -1.22574, -0.223321, -0.0954155, 1.18336, -0.0398946, 0.190541, -1.15945, 0.185119, 0.0667915, -1.23656, 0.049201, -0.930116, -1.17519, -0.0902536, 0.173864, 1.17955, 0.0869785, 0.175903, -1.17955, 0.125043, 0.150487, 1.22942, -0.027076, -0.926916, 1.17532, -0.128149, 0.1486, -1.14731, 0.193311, -0.272135, 1.14923, 0.19579, 0.0133655, 1.23656, 0.049201, -0.930116, -1.22942, -0.027076, -0.926916, 1.14731, 0.193311, -0.272135, -1.18336, -0.0398946, 0.190541, 1.18471, 0.0364479, 0.19119, -1.17165, -0.153008, 0.121717, 1.15945, 0.185119, 0.0667915, -1.15515, -0.188203, 0.0527027, 1.17955, 0.125043, 0.150487, -1.17955, 0.0869785, 0.175903, 1.17519, -0.0902536, 0.173864, -1.1697, 0.161676, 0.108286, -1.222, -0.0647258, -0.885726, 1.222, -0.0647258, -0.885726, -1.17532, -0.128149, 0.1486, -1.14923, 0.19579, 0.0133655, 1.15515, -0.188203, 0.0527027, -1.222, 0.0989056, -0.860703, 1.222, 0.0989056, -0.860703, 1.17165, -0.153008, 0.121717 )
 
+[sub_resource type="BoxShape" id=17]
+extents = Vector3( 0.0476358, 0.142842, 1 )
+
+[sub_resource type="BoxShape" id=18]
+extents = Vector3( 0.992231, 0.142042, 0.0554057 )
+
 [node name="Player" type="VehicleBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.27823, 0 )
+collision_layer = 3
+collision_mask = 3
 mass = 200.0
 can_sleep = false
 brake = 1.0
@@ -161,7 +169,7 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="LeftWheel" type="VehicleWheel" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.622, 0.108, -0.265 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.622, 0.108, -0.265 )
 use_as_traction = true
 use_as_steering = true
 wheel_radius = 0.55
@@ -176,7 +184,7 @@ skeleton = NodePath("../../Robot")
 material/0 = null
 
 [node name="RightWheel" type="VehicleWheel" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.64, 0.109, -0.265 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.64, 0.109, -0.265 )
 use_as_traction = true
 use_as_steering = true
 wheel_radius = 0.55
@@ -225,12 +233,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.05176e-05, 0 )
 shape = SubResource( 16 )
 
 [node name="Pazinha" type="KinematicBody" parent="Robot/BracoManual/braco"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.24208 )
 collision_layer = 4
 collision_mask = 4
 
 [node name="Antebraco" type="MeshInstance" parent="Robot/BracoManual/braco/Pazinha"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00457668, -2.35102 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00457668, -0.0506173 )
 mesh = SubResource( 10 )
 skeleton = NodePath("../../Braco")
 material/0 = SubResource( 11 )
@@ -241,9 +249,25 @@ mesh = SubResource( 12 )
 material/0 = SubResource( 13 )
 
 [node name="AntebracoCS" type="CollisionShape" parent="Robot/BracoManual/braco/Pazinha"]
-transform = Transform( 1.02816, 0, 0, 0, 0.0503747, -0.00657177, 0, 0.000424302, 0.780225, 0, 0.00855207, -3.19484 )
+transform = Transform( 1.02816, 0, 0, 0, 0.0503747, -0.00657177, 0, 0.000424302, 0.780225, 0, 0.00855207, -0.894437 )
 shape = SubResource( 14 )
 
 [node name="PáCS" type="CollisionShape" parent="Robot/BracoManual/braco/Pazinha"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00457668, -2.35102 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00457668, -0.0506173 )
 shape = SubResource( 15 )
+
+[node name="Lado" type="CollisionShape" parent="Robot/BracoManual/braco/Pazinha"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.933927, 0.102129, -1.82908 )
+shape = SubResource( 17 )
+
+[node name="Lado2" type="CollisionShape" parent="Robot/BracoManual/braco/Pazinha"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.949752, 0.102129, -1.82908 )
+shape = SubResource( 17 )
+
+[node name="Tras" type="CollisionShape" parent="Robot/BracoManual/braco/Pazinha"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0178972, 0.102129, -0.885504 )
+shape = SubResource( 18 )
+
+[node name="Tras2" type="CollisionShape" parent="Robot/BracoManual/braco/Pazinha"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0178972, 0.102129, -2.79171 )
+shape = SubResource( 18 )

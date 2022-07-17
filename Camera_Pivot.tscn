@@ -10,4 +10,4 @@ target_path = NodePath("../Player")
 [node name="Camera" type="ClippedCamera" parent="."]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -15 )
 current = true
-collision_mask = 4
+collision_mask = 8

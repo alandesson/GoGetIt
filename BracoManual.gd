@@ -2,9 +2,9 @@ extends Spatial
 
 
 const min_angle = -60;
-var max_angle = 0;
+var max_angle = 60;
 
-var elevacao = 100
+var elevacao = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,50 +31,43 @@ func pazinha_drop():
 
 func roda_ombro(angle):
 	$braco.rotate_x(angle)
-	var colidiu_cima = $braco.move_and_collide(Vector3(0,0,0),true,true,true)
-	if colidiu_cima != null:
-		$braco.rotate_x(-angle)
-		return
-	
-	var colidiu_baixo = $braco/Pazinha.move_and_collide(Vector3(0,0,0),true,true,true)
-	if colidiu_baixo != null:
-		pazinha_bump()
-		if $braco/Pazinha.move_and_collide(Vector3(0,0,0),true,true,true) != null:
-			$braco.rotate_x(-angle)
+#	var colidiu_cima = $braco.move_and_collide(Vector3(0,0,0),true,true,true)
+#	if colidiu_cima != null:
+#		$braco.rotate_x(-angle)
+#		return
+#
+#	var colidiu_baixo = $braco/Pazinha.move_and_collide(Vector3(0,0,0),true,true,true)
+#	if colidiu_baixo != null:
+#		pazinha_bump()
+#		if $braco/Pazinha.move_and_collide(Vector3(0,0,0),true,true,true) != null:
+#			$braco.rotate_x(-angle)
 	
 func abaixa_ombro(dist):
-	$braco.translate(Vector3(0, dist, 0))
-	var colidiu_cima = $braco.move_and_collide(Vector3(0,0,0),true,true,true)
-	if colidiu_cima != null:
-		$braco.translate(Vector3(0, -dist, 0))
-		return
-	
-	var colidiu_baixo = $braco/Pazinha.move_and_collide(Vector3(0,0,0),true,true,true)
-	if colidiu_baixo != null:
-		pazinha_bump()
-		if $braco/Pazinha.move_and_collide(Vector3(0,0,0),true,true,true) != null:
-			$braco.translate(Vector3(0, -dist, 0))
+	$braco.translation.y = clamp($braco.translation.y + dist, -1, 0)
+#	var colidiu_cima = $braco.move_and_collide(Vector3(0,0,0),true,true,true)
+#	if colidiu_cima != null:
+#		$braco.translate(Vector3(0, -dist, 0))
+#		return
+#
+#	var colidiu_baixo = $braco/Pazinha.move_and_collide(Vector3(0,0,0),true,true,true)
+#	if colidiu_baixo != null:
+#		pazinha_bump()
+#		if $braco/Pazinha.move_and_collide(Vector3(0,0,0),true,true,true) != null:
+#			$braco.translate(Vector3(0, -dist, 0))
 	
 func roda_pazinha(angle):
-	var target_angle = clamp(max_angle + angle, -60, 60)
-	if target_angle < max_angle:
-		$braco/Pazinha.rotate_x(deg2rad(angle))
-		
-	max_angle = target_angle
-	
+	$braco/Pazinha.rotate_x(deg2rad(angle))
+	$braco/Pazinha.rotation_degrees.x = clamp($braco/Pazinha.rotation_degrees.x, min_angle, max_angle)
 
 func _physics_process(delta):
 	pazinha_drop()
-	var pa_direcao = Input.get_axis("PazinhaUp", "PazinhaDown")
+	if Input.is_action_just_released("PazinhaUp"):
+		roda_pazinha(3)
+	elif Input.is_action_just_released("PazinhaDown"):
+		roda_pazinha(-3)
 	var braco_direcao = Input.get_axis("BracoUp","BracoDown")
-	roda_pazinha(pa_direcao)
-	roda_ombro(braco_direcao)
-	if(Input.action_press("ElevadorOmbro")):
-		var aux = clamp(elevacao - 10, 0, 100)
-		abaixa_ombro(aux - elevacao)
-		elevacao = aux
+	roda_ombro(deg2rad(braco_direcao/2))
+	if Input.is_action_pressed("ElevadorOmbro"):
+		abaixa_ombro(-.05)
 	else:
-		var aux = clamp(elevacao + 10, 0, 100)
-		abaixa_ombro(aux - elevacao)
-		elevacao = aux
-		
+		abaixa_ombro(.05)
