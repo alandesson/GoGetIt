@@ -545,8 +545,8 @@ transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -0.0686042,
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -31.6308, 6.29351, 43.7033 )
 
 [node name="UI" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="ProgressBar" type="ProgressBar" parent="UI"]
 margin_left = 71.0
@@ -582,10 +582,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 426.0
-margin_top = 254.0
-margin_right = 636.0
-margin_bottom = 268.0
+margin_left = -105.0
+margin_top = -7.0
+margin_right = 105.0
+margin_bottom = 7.0
 text = "The SOFA UNDERSIDE"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UI"]
